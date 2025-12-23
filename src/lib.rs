@@ -18,6 +18,7 @@ use log::*;
 use nonlinear_diffusion::pm_g2;
 use std::path::Path;
 
+
 /// A point of interest in an image.
 /// This pretty much follows from OpenCV conventions.
 #[derive(Debug, Clone, Copy)]

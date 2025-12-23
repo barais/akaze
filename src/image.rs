@@ -2,7 +2,7 @@ use derive_more::{Deref, DerefMut};
 use image::{imageops, DynamicImage, ImageBuffer, Luma};
 use log::*;
 use ndarray::{Array2, ArrayView2, ArrayViewMut2};
-use nshare::{MutNdarray2, RefNdarray2};
+use nshare::{AsNdarray2Mut, AsNdarray2};
 use std::f32;
 
 /// The image type we use in this library.
@@ -65,11 +65,11 @@ impl GrayFloatImage {
     }
 
     pub fn ref_array2(&self) -> ArrayView2<f32> {
-        self.0.ref_ndarray2()
+        self.0.as_ndarray2()
     }
 
     pub fn mut_array2(&mut self) -> ArrayViewMut2<f32> {
-        self.0.mut_ndarray2()
+        self.0.as_ndarray2_mut()
     }
 
     pub fn zero_array(&self) -> Array2<f32> {
